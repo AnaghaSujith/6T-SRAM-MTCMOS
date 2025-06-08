@@ -13,7 +13,7 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 
 ---
 
-## 🔧 Tools Used
+## Tools Used
 
 - Cadence Virtuoso (schematic & simulation)
 - 90nm CMOS Technology
@@ -21,7 +21,7 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 
 ---
 
-## 🧪 Results Summary
+## Results Summary
 
 | SRAM Variant | Leakage Power | Reduction |
 |--------------|---------------|-----------|
