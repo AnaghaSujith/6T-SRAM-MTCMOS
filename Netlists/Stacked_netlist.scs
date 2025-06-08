@@ -1,0 +1,77 @@
+// Generated for: spectre
+// Generated on: Apr 15 21:26:54 2025
+// Design library name: lpv_proj
+// Design cell name: sram_stack
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/home/workspace/cadence/IC615/45/gpdk045/../models/spectre/gpdk045.scs" section=NN
+
+// Library name: lpv_proj
+// Cell name: sram_Sch
+// View name: schematic
+subckt sram_Sch BL BLB Q QB VCC WL gnd
+    NM12 (net16 BLB gnd gnd) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM11 (net29 BL gnd gnd) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM1 (QB Q net16 net16) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM6 (BLB WL QB gnd) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM0 (Q QB net29 net29) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    PM8 (net30 BLB VCC VCC) gpdk045_pmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    PM7 (net11 BL VCC VCC) gpdk045_pmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    PM1 (QB Q net30 net30) gpdk045_pmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    PM0 (Q QB net11 net11) gpdk045_pmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM3 (Q WL BL gnd) gpdk045_nmos1v_hvt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+ends sram_Sch
+// End of subcircuit definition.
+
+// Library name: lpv_proj
+// Cell name: sram_stack
+// View name: schematic
+I0 (BL BLB Q QB net19 WL net18) sram_Sch
+NM0 (net18 net12 0 0) gpdk045_nmos1v_hvt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+PM0 (net19 net5 net5 net5) gpdk045_pmos1v_hvt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+V1 (net5 0) vsource type=dc
+V0 (net12 0) vsource dc=0 type=dc
+V4 (BL 0) vsource type=pulse val0=0 val1=500m period=50n rise=1n fall=1n \
+        width=25n
+V3 (BLB 0) vsource type=pulse val0=500m val1=0 period=50n rise=1n fall=1n \
+        width=25n
+V2 (WL 0) vsource type=pulse val0=0 val1=500m
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=10n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub

@@ -1,0 +1,65 @@
+// Generated for: spectre
+// Generated on: Apr 16 09:44:10 2025
+// Design library name: lpv_proj
+// Design cell name: WITH_SYM2
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/home/workspace/cadence/IC615/45/gpdk045/../models/spectre/gpdk045.scs" section=NN
+
+// Library name: lpv_proj
+// Cell name: try1
+// View name: schematic
+subckt try1 BL BLB Q QB VCC WL gnd
+    NM6 (BLB WL QB gnd) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM1 (QB Q gnd gnd) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM0 (Q QB gnd gnd) gpdk045_nmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    PM1 (QB Q VCC VCC) gpdk045_pmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    PM0 (Q QB VCC VCC) gpdk045_pmos1v w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+    NM3 (Q WL BL gnd) gpdk045_nmos1v_hvt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+ends try1
+// End of subcircuit definition.
+
+// Library name: lpv_proj
+// Cell name: WITH_SYM2
+// View name: schematic
+V5 (net06 0) vsource dc=500m type=dc
+V4 (net09 0) vsource dc=0 type=dc
+V3 (BL 0) vsource type=pulse val0=0 val1=500m period=50n rise=1n fall=1n \
+        width=25n
+V2 (BLB 0) vsource type=pulse val0=500m val1=0 period=50n rise=1n fall=1n \
+        width=25n
+V1 (WL 0) vsource type=pulse val0=0 val1=500m
+I9 (BL BLB Q QB net6 WL net013) try1
+NM0 (net013 net09 0 0) gpdk045_nmos1v_hvt w=(120n) l=45n nf=1 as=16.8f \
+        ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n \
+        sd=160n m=(1)
+PM0 (net6 net06 net06 net06) gpdk045_pmos1v_hvt w=(120n) l=45n nf=1 \
+        as=16.8f ad=16.8f ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n \
+        sb=140n sd=160n m=(1)
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=100n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub
