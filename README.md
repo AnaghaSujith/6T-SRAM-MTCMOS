@@ -38,8 +38,6 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 - **Sim_Results** – Summary of power measurements and comparisons  
 - **Report** – Full project report with design and analysis  
 - **Netlists** – Optional: extracted SPICE netlists  
-- **Screenshots** – Cadence screenshots and layout views (optional)  
-- **Presentation** – Project presentation (if any)
 
 ---
 
