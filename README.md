@@ -1,6 +1,6 @@
 # Low Power 6T SRAM Design using MTCMOS and Stacking
 
-This repository contains the design, simulation, and analysis of a low-power 6T SRAM cell using MTCMOS and stacking techniques. The project was implemented and evaluated using **Cadence Virtuoso (90nm technology node)**.
+This repository contains the design, simulation, and analysis of a low-power 6T SRAM cell using MTCMOS and stacking techniques. The project was implemented and evaluated using **Cadence Virtuoso (45nm technology node)**.
 
 ---
 
@@ -16,7 +16,7 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 ## Tools Used
 
 - Cadence Virtuoso (schematic & simulation)
-- 90nm CMOS Technology
+- 45nm CMOS Technology
 - Linux environment
 
 ---
