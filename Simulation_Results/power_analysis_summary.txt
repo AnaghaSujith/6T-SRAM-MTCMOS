@@ -1,0 +1,14 @@
+Simulation Tool: Cadence Virtuoso
+Technology Node: 45nm CMOS
+Operating Mode: Standby (for leakage analysis)
+
+Summary:
+- Conventional 6T SRAM leakage: 11.33 nW
+- MTCMOS-based SRAM leakage: 227.2 pW
+- Stacking + MTCMOS SRAM leakage: 979.9 pW
+
+% Power Reduction:
+- MTCMOS: 97.9%
+- Stacking + MTCMOS: 91.3%
+
+Note: Measurements taken from Cadence ADE simulation window using the calculator.
