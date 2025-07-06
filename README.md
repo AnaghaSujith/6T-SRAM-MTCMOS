@@ -43,6 +43,9 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 
 ## Inference
 The analysis shows a drastic reduction in leakage power when using MTCMOS techniques in 6T SRAM designs. Applying MTCMOS alone reduces leakage by 97.9%, while combining it with transistor stacking still achieves a significant 91.3% reduction. Although stacking slightly increases leakage compared to MTCMOS alone, it offers design flexibility and improved control. Overall, MTCMOS-based techniques are highly effective for minimizing standby power in SRAMs.
+
+
+
 ---
 
 
