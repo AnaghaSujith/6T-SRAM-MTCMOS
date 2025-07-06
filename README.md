@@ -21,16 +21,6 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 
 ---
 
-## Results Summary
-
-| SRAM Variant | Leakage Power | Reduction |
-|--------------|---------------|-----------|
-| Conventional 6T SRAM | 11.33 nW | - |
-| With MTCMOS | 227.2 pW | 97.9% |
-| With MTCMOS + Stacking | 979.9 pW | 91.3% |
-
----
-
 ##  Project Structure
 
 - **Circuit_Diagrams** – Schematic diagrams of each SRAM variant  
@@ -41,23 +31,18 @@ The goal of this project is to reduce leakage power in SRAM cells, which is crit
 
 ---
 
-## How to Use
+## Results Summary
 
-This repo is for documentation and reference. Due to Cadence licensing and NDA restrictions, design database files are not shared.  
-You can replicate the results using the provided netlists and schematics.
-
----
-
-## Author
-
-**Anagha Sujith**  
-BTech ECE, PES University  
-📧 aka.anaghasujith@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/anaghasujith)  
-🔗 [GitHub](https://github.com/entropybrains)
+| SRAM Variant | Leakage Power | Reduction |
+|--------------|---------------|-----------|
+| Conventional 6T SRAM | 11.33 nW | - |
+| With MTCMOS | 227.2 pW | 97.9% |
+| With MTCMOS + Stacking | 979.9 pW | 91.3% |
 
 ---
 
-## License
+## Inference
+The analysis shows a drastic reduction in leakage power when using MTCMOS techniques in 6T SRAM designs. Applying MTCMOS alone reduces leakage by 97.9%, while combining it with transistor stacking still achieves a significant 91.3% reduction. Although stacking slightly increases leakage compared to MTCMOS alone, it offers design flexibility and improved control. Overall, MTCMOS-based techniques are highly effective for minimizing standby power in SRAMs.
+---
 
-This project is licensed under the [MIT License](LICENSE).
+
